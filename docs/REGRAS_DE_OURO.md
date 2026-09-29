@@ -1,11 +1,10 @@
-# Regras de Ouro — Análise de Dados (Python + SQL)
+# Regras de Ouro — o jeito certo de fazer
 
-> Contrato de estudo e trabalho com dados.
-> Serve de guia para exercícios, projetos, consultas SQL, notebooks e scripts Python.
-> A **Parte IV** rege o agente de **Loop Engineering** (DeepSeek Flash) que este projeto desenvolve.
+> Contrato de estudo e trabalho deste projeto.
+> Serve de guia para os arquivos, os notebooks e os scripts Python.
 >
 > George Herman Becker · Gestão em TI — Estácio
-> Início: 11/09/2026
+> Início: 29/09/2026
 >
 > Apoie este trabalho:
 > - PIX: `a8b68e14-edfe-4450-88f2-c2af4aca2a6c`
@@ -103,55 +102,6 @@ Antes do `JOIN`, conheça chaves, cardinalidade e nulos das duas tabelas. Junç�
 
 **R23. Notebook é rascunho; script é produto.**
 Notebooks servem para explorar e aprender. O que virar rotina ou entrega vira `.py` organizado, com entrada e saída claras, pronto para rodar de novo.
-
----
-
-## Parte IV — Loop Engineering (o jeito de trabalhar do agente)
-
-> O coração deste projeto: um agente (DeepSeek Flash) que melhora sistemas em
-> **ciclos contínuos e verificáveis**. O ciclo completo:
-> ler o contrato → propor UMA hipótese pequena → aplicar a mudança → verificar →
-> medir a métrica → decidir (**ACEITO** mantém e atualiza a linha de base;
-> **REJEITADO** reverte na hora) → registrar no log → repetir até a meta.
->
-> Para o agente: seu prompt de operação é `meu-loop-agente/system_prompt.md` e seu
-> contrato é `meu-loop-agente/program.md`. Estas regras são a base dos dois.
-
-**Por que este modelo (as vantagens que o justificam):**
-- só entra mudança com número melhor — regressão silenciosa não passa;
-- reverter é sempre barato (hipótese pequena + ponto de retorno antes do ciclo);
-- decisão objetiva por critério escrito — não por opinião nem por "promessa" da IA;
-- histórico completo no log — o conhecimento atravessa sessões e pessoas;
-- escopo fechado e protegido — o agente tem autonomia porque o raio de ação é limitado;
-- ganho acumulado — cada aceite atualiza a linha de base; o avanço compõe;
-- custo e tempo controlados — limites de parada claros, sem loop infinito.
-
-**R24. Contrato antes do ciclo.**
-Objetivo, métrica principal, arquivos permitidos/proibidos, comandos de verificação e critérios de aceite/rejeição ficam escritos em `program.md` antes de qualquer mudança. O humano escreve e revisa; o agente lê e segue. Sem contrato, não há ciclo.
-
-**R25. Uma hipótese pequena por iteração.**
-Cada ciclo propõe UMA melhoria localizada, com diff pequeno (menos de 50 linhas). Mudança grande mistura efeitos, esconde a causa e encarece a reversão.
-
-**R26. Medir, nunca estimar.**
-A métrica é lida do resultado real (o verificador roda o comando e captura o número) e comparada com o melhor valor registrado. "Parece que melhorou" não vale como resultado.
-
-**R27. Sem melhora, sem mudança.**
-Comando falhou ou métrica não melhorou? Reverte na hora e registra como REJEITADO. O sistema só acumula o que melhora de verdade.
-
-**R28. Toda iteração entra no log.**
-Hipótese, arquivos alterados, métrica antes/depois, decisão e data vão para o `log.md`. É o log que permite continuar de onde parou — na mesma sessão ou meses depois.
-
-**R29. Escopo fechado.**
-O agente só modifica arquivos permitidos dentro de `workspace/`. `.env`, segredos, deploy e workflows são proibidos — e o git bloqueia o `.env` no commit e no envio. Autonomia vale porque o raio de ação é limitado.
-
-**R30. Ponto de retorno antes de cada ciclo.**
-Commit antes de mexer (ou, no mínimo, o estado anterior registrado). Reverter precisa ser um comando, nunca uma arqueologia.
-
-**R31. Saber parar.**
-Critérios explícitos: meta atingida, número máximo de iterações, rejeições seguidas demais ou falta de hipóteses plausíveis. Ciclo que não para queima tempo, recursos e confiança.
-
-**R32. Consistência acima de criatividade.**
-Para o DeepSeek Flash: temperatura baixa (0.2–0.3), instruções específicas (listas e comandos exatos — o modelo pode ignorar instruções vagas) e contrato curto. Uma hipótese por ciclo, sempre no mesmo formato: previsível, repetível, auditável.
 
 ---
 
