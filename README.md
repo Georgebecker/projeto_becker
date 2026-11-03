@@ -17,7 +17,8 @@ erro na certa. Aqui a lista é a fonte; o widget é gerado a partir dela.
 - **Propósito** — transformar uma lista de links de afiliado em um widget pronto para o
   Blogger, com título, imagem, preço, preço anterior, desconto, loja e selos reais.
 - **Maturidade** — MVP funcional: 53 produtos extraídos, widget validado em navegador
-  real (imagem carrega, card troca, nenhum erro de console).
+  real (imagem carrega, card troca, nenhum erro de console) e **publicado no site da
+  [FS Imobiliária](https://www.fsimobiliaria.com/)**.
 - **O que está sendo treinado** — automação de navegador com Playwright, leitura de
   página que só existe depois do JavaScript rodar, e geração de artefato reprodutível.
 - **Quem usaria** — afiliado ou blogueiro que quer vitrine rotativa sem instalar plugin
@@ -94,6 +95,32 @@ npm run capturar  # atualiza as capturas de docs/img/
 ![O widget dentro de um post, entre o texto de abertura e o rodapé](docs/img/05-no-post.png)
 
 *No contexto real: um post de "Ofertas do dia" com o card entre os parágrafos.*
+
+## Em produção: o widget rodando fora do laboratório
+
+Essas três capturas são a **prova de êxito**: o mesmo HTML de
+`bloggermercadolivre.js`, publicado no site da
+[FS Imobiliária](https://www.fsimobiliaria.com/) — um site imobiliário de verdade,
+com outro tema, outras fontes e outros plugins. Se funcionou lá, funciona no seu blog.
+
+![Widget do Mercado Livre na barra lateral do site FS Imobiliária, com o mouse sobre Ver oferta e a URL do Mercado Livre na barra de status](docs/img/06-fsimobiliaria-lateral.png)
+
+*Na home, na coluna da direita: o card da scooter a R$ 5.600. Repare na barra de status
+do navegador — ao passar o mouse em "Ver oferta", ela mostra a URL do
+`mercadolivre.com.br` já com os parâmetros de rastreio do afiliado. É a prova de que o
+clique sai pela sua conta, não pelo site.*
+
+![Card horizontal do notebook Samsung Galaxy Book4 na área de conteúdo da home, com preço riscado e 29% de desconto](docs/img/07-fsimobiliaria-conteudo.png)
+
+*Na coluna de conteúdo, o widget ocupa a largura toda e vira card horizontal: notebook
+Samsung Galaxy Book4 por R$ 4.063 (de R$ 5.799, com 29% OFF), selos de frete grátis,
+FULL e MAIS VENDIDO, nome da loja e botão "Ver oferta".*
+
+![Widget com o tablet Samsung Galaxy Tab A11+ logo abaixo do formulário de comentário do blog](docs/img/08-fsimobiliaria-post.png)
+
+*Dentro de um post, logo depois do formulário de comentário: tablet Galaxy Tab A11+ a
+R$ 1.487 (de R$ 2.349, com 36% OFF), com as setas para o visitante trocar de produto
+sem sair da página.*
 
 ## Limitações conhecidas
 
