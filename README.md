@@ -96,32 +96,6 @@ npm run capturar  # atualiza as capturas de docs/img/
 
 *No contexto real: um post de "Ofertas do dia" com o card entre os parágrafos.*
 
-## Em produção: o widget rodando fora do laboratório
-
-Essas três capturas são a **prova de êxito**: o mesmo HTML de
-`bloggermercadolivre.js`, publicado no site da
-[FS Imobiliária](https://www.fsimobiliaria.com/) — um site imobiliário de verdade,
-com outro tema, outras fontes e outros plugins. Se funcionou lá, funciona no seu blog.
-
-![Widget do Mercado Livre na barra lateral do site FS Imobiliária, com o mouse sobre Ver oferta e a URL do Mercado Livre na barra de status](docs/img/06-fsimobiliaria-lateral.png)
-
-*Na home, na coluna da direita: o card da scooter a R$ 5.600. Repare na barra de status
-do navegador — ao passar o mouse em "Ver oferta", ela mostra a URL do
-`mercadolivre.com.br` já com os parâmetros de rastreio do afiliado. É a prova de que o
-clique sai pela sua conta, não pelo site.*
-
-![Card horizontal do notebook Samsung Galaxy Book4 na área de conteúdo da home, com preço riscado e 29% de desconto](docs/img/07-fsimobiliaria-conteudo.png)
-
-*Na coluna de conteúdo, o widget ocupa a largura toda e vira card horizontal: notebook
-Samsung Galaxy Book4 por R$ 4.063 (de R$ 5.799, com 29% OFF), selos de frete grátis,
-FULL e MAIS VENDIDO, nome da loja e botão "Ver oferta".*
-
-![Widget com o tablet Samsung Galaxy Tab A11+ logo abaixo do formulário de comentário do blog](docs/img/08-fsimobiliaria-post.png)
-
-*Dentro de um post, logo depois do formulário de comentário: tablet Galaxy Tab A11+ a
-R$ 1.487 (de R$ 2.349, com 36% OFF), com as setas para o visitante trocar de produto
-sem sair da página.*
-
 ## Limitações conhecidas
 
 - **Sem nota de avaliação.** O card da vitrine não traz estrelas nem quantidade de
@@ -138,6 +112,16 @@ sem sair da página.*
 - **Dados fora do git.** `data/raw`, `data/processed` e `listalinks.txt` são ignorados:
   o que se versiona é o código e o widget gerado. Os links de afiliado são do dono e
   ficam só na máquina dele.
+
+## Em produção, fora do laboratório
+
+O mesmo HTML de `bloggermercadolivre.js` roda no site da
+[FS Imobiliária](https://www.fsimobiliaria.com/) — um site imobiliário de verdade, com
+outro tema, outras fontes e outros plugins. Se funcionou lá, funciona no seu blog.
+
+Quer ver com os próprios olhos? Abra <https://www.fsimobiliaria.com/>: o card do Mercado
+Livre aparece na barra lateral e na área de conteúdo, e troca de produto sozinho. As
+telas daquele site trazem o contato da imobiliária, então não as reproduzo aqui.
 
 ## Convite à interação
 
