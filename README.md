@@ -28,7 +28,7 @@ erro na certa. Aqui a lista é a fonte; o widget é gerado a partir dela.
 | Arquivo | Para que serve |
 |---|---|
 | `bloggermercadolivre.js` | O widget final (HTML + CSS + JS em um arquivo). É isto que vai para o Blogger. |
-| `listalinks.txt` | A fonte da verdade: os links curtos de afiliado (`meli.la/...`). |
+| `listalinks.txt` | A fonte da verdade: os links curtos de afiliado (`meli.la/...`). **Local, fora do git** — crie o seu. |
 | `scripts/extrair_destaques.js` | Abre cada link no Chromium e lê o anúncio em destaque. |
 | `scripts/gerar_widget.js` | Reescreve a lista `DADOS` do widget a partir do JSON extraído. |
 | `scripts/testar_widget.js` | Abre o widget, confere imagem, preço e troca de produto. |
@@ -38,6 +38,14 @@ erro na certa. Aqui a lista é a fonte; o widget é gerado a partir dela.
 ## Como rodar
 
 Requisitos: **Node 24+** e **Git**. O Python do projeto não é usado por este pipeline.
+
+Antes de extrair, crie o `listalinks.txt` na raiz do projeto com um link de afiliado por
+linha (ele é local e não está versionado — cada pessoa usa os seus):
+
+```text
+https://meli.la/SEU_LINK_1
+https://meli.la/SEU_LINK_2
+```
 
 ```powershell
 npm install                      # instala o Playwright
@@ -100,8 +108,9 @@ npm run capturar  # atualiza as capturas de docs/img/
   `poly-component__*`; se o site mudar o layout, os seletores precisam de ajuste.
 - **Anti-bot.** A página do anúncio individual responde com verificação de conta para
   acesso automatizado; por isso a extração lê a vitrine, não o anúncio.
-- **Dados fora do git.** `data/raw` e `data/processed` são ignorados: o que se versiona
-  é o código e o widget gerado.
+- **Dados fora do git.** `data/raw`, `data/processed` e `listalinks.txt` são ignorados:
+  o que se versiona é o código e o widget gerado. Os links de afiliado são do dono e
+  ficam só na máquina dele.
 
 ## Convite à interação
 

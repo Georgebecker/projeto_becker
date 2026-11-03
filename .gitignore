@@ -7,6 +7,8 @@
 venv/
 
 # ---- Dados (nunca versionar dados) ----
+# listalinks.txt sao os links de afiliado do dono: fica so na maquina local.
+listalinks.txt
 data/raw/*
 data/processed/*
 data/descartados/*
