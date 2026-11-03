@@ -1,0 +1,19 @@
+﻿{
+  "name": "projeto_becker",
+  "version": "1.0.0",
+  "description": "Widget de produtos do Mercado Livre para o Blogger: extrai o anuncio em destaque de cada link de afiliado e gera o card rotativo.",
+  "main": "bloggermercadolivre.js",
+  "directories": { "doc": "docs" },
+  "scripts": {
+    "extrair": "node scripts/extrair_destaques.js listalinks.txt data/processed/produtos.json",
+    "gerar": "node scripts/gerar_widget.js",
+    "testar": "node scripts/testar_widget.js",
+    "capturar": "node scripts/capturar_widget.js",
+    "atualizar": "npm run extrair && npm run gerar && npm run testar"
+  },
+  "keywords": ["mercadolivre", "afiliado", "blogger", "widget"],
+  "author": "George Herman Becker",
+  "license": "ISC",
+  "type": "commonjs",
+  "devDependencies": { "playwright": "^1.64.1" }
+}

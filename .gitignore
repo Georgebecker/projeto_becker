@@ -25,6 +25,9 @@ __pycache__/
 .pytest_cache/
 .ipynb_checkpoints/
 
+# ---- Node / Playwright (ferramentas de extracao) ----
+node_modules/
+
 # ---- Saídas e logs ----
 saidas/
 logs/
